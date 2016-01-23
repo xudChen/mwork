@@ -16,5 +16,6 @@ angular.module('starter.services', [])
 	      return deferred.promise;
 		}
 	};
+	
 	return newServices;
 }]);
