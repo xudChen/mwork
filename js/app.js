@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$ionicNavBarDelegate) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,9 +20,13 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       StatusBar.styleDefault();
     }
   });
+  $ionicNavBarDelegate.align('center');
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+  
+
+
   $stateProvider
 
   .state('app', {
