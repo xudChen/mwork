@@ -11,7 +11,7 @@ angular.module('starter.services', [])
 	      document.body.appendChild(script);
 	      script.onload = function(){
 	        deferred.resolve(jsonData);
-	        // document.body.removeChild(script);
+	        document.body.removeChild(script);
 	      }
 	      return deferred.promise;
 		}

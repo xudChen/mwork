@@ -44,18 +44,16 @@ angular.module('starter.controllers', [])
 .controller('PlaylistsCtrl', ['$scope','$newsServices',function($scope,$newsServices) {
     $scope.noMoremessage = false;
     $scope.items = [];
-    var page = 1;
-    var num = 20;
+    var page = 1,num = 20;
+    
     $scope.doRefresh = function(){
       var params = "num="+num+"&page="+page+"&offset_page=0&offset_num=0";
       $newsServices.getNewsList(params).then(function(data){
-        console.log(data);
         $scope.items = data.list.concat($scope.items);
         $scope.$broadcast('scroll.refreshComplete');
         page++;
       });
     }
-
     $scope.doRefresh();
 }])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
