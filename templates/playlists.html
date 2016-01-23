@@ -1,8 +1,9 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="全部">
   <ion-content>
+  	<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
     <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
+      <ion-item ng-repeat="item in items" href="{{item.url}}">
+        {{item.title}}
       </ion-item>
     </ion-list>
   </ion-content>
