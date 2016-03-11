@@ -42,6 +42,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', ['$scope','$newsServices',function($scope,$newsServices) {
+    alert(cordova);
     $scope.noMoremessage = false;
     $scope.items = [];
     var page = 1,num = 20;
